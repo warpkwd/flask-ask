@@ -1,0 +1,142 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "セッション",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "MyColorIsIntent",
+                    "slots": [
+                        {
+                            "name": "Color",
+                            "type": "AMAZON.Color",
+                            "samples": [
+                                "{Color} です"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        " {Color} だな",
+                        "色は {Color} です",
+                        " {Color} ",
+                        "好きな色は {Color} です",
+                        "好きな色は {Color}",
+                        "色は {Color} ",
+                        "私の好きな色は {Color} "
+                    ]
+                },
+                {
+                    "name": "WhatsMyColorIntent",
+                    "slots": [],
+                    "samples": [
+                        "私の好きな色は何だった",
+                        "私の色は何",
+                        "私の色は何でしょう",
+                        "私の色を言って",
+                        "私の色を教えて",
+                        "私の好きな色は何",
+                        "好きな色は何でしょう",
+                        "好きな色を言ってみて",
+                        "好きな色を教えて",
+                        "好きな色を教えてください"
+                    ]
+                },
+                {
+                    "name": "AMAZON.MoreIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateSettingsIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NextIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PageDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PreviousIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollRightIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollDownIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollLeftIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ScrollUpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.PauseIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.ResumeIntent",
+                    "samples": []
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "MyColorIsIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "Color",
+                            "type": "AMAZON.Color",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.291776236061.8186837218"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.291776236061.8186837218",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "あなたの好きな色は何ですか？"
+                    }
+                ]
+            }
+        ]
+    }
+}

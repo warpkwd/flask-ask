@@ -1,0 +1,16 @@
+GetFirstEventIntent {day} のイベントは
+GetFirstEventIntent {day} のイベントを教えて
+GetFirstEventIntent {day} は何がありましたか
+GetFirstEventIntent 何かありましたか
+GetFirstEventIntent {day}
+
+GetNextEventIntent はい
+GetNextEventIntent イエス
+GetNextEventIntent もちろん
+GetNextEventIntent はいそうです
+
+AMAZON.StopIntent いいえ
+AMAZON.StopIntent のー
+AMAZON.StopIntent いいえちがいます
+AMAZON.StopIntent やめます
+

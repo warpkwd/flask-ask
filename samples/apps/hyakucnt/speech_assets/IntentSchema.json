@@ -1,0 +1,82 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "百カウント",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": [
+                        "キャンセル",
+                        "まって",
+                        "もういい",
+                        "とめて",
+                        "きゃんせる"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "のーさんきゅう",
+                        "のー",
+                        "もういいよ",
+                        "もういい",
+                        "やめます",
+                        "いいえ",
+                        "おしまい",
+                        "止めて",
+                        "終わり",
+                        "やめ",
+                        "おわり",
+                        "とめて",
+                        "やめて",
+                        "ストップ"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AnyCountIntent",
+                    "slots": [
+                        {
+                            "name": "from_",
+                            "type": "AMAZON.NUMBER"
+                        },
+                        {
+                            "name": "end",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "{from_} から {end} ",
+                        "{from_} から {end} までね",
+                        "{from_} から {end} まで だよ",
+                        "{from_} から {end} まで 数えな",
+                        "{from_} から {end} まで 数えてください",
+                        "{from_} から {end} まで 数えてくれ",
+                        "{from_} から {end} まで 数えて",
+                        "{from_} から {end} まで"
+                    ]
+                },
+                {
+                    "name": "YesIntent",
+                    "slots": [],
+                    "samples": [
+                        "おっけー",
+                        "はじめて",
+                        "そうだよ",
+                        "どうぞ",
+                        "うん",
+                        "はい"
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}

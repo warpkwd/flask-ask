@@ -1,0 +1,11 @@
+MyColorIsIntent  私の色は {Color}
+MyColorIsIntent  私の好きな色は {Color}
+WhatsMyColorIntent 私の色は何
+WhatsMyColorIntent 私の色は何でしょう
+WhatsMyColorIntent 私の色を言って
+WhatsMyColorIntent 私の色を教えて
+WhatsMyColorIntent 私の好きな色は何
+WhatsMyColorIntent 私の好きな色は何でしょう
+WhatsMyColorIntent 私の好きな色を言ってみて
+WhatsMyColorIntent 私の好きな色を教えて
+WhatsMyColorIntent 私の好きな色を教えてください
