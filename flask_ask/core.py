@@ -40,7 +40,7 @@ def dbgdump(obj, default=None, cls=None):
         indent = 2
     else:
         indent = None
-    msg = json.dumps(obj, indent=indent, default=default, cls=cls)
+    msg = json.dumps(obj, indent=indent, ensure_ascii=False, default=default, cls=cls)
     logger.debug(msg)
 
 
@@ -931,21 +931,36 @@ class YamlLoader(BaseLoader):
 
     def __init__(self, app, path):
         self.path = app.root_path + os.path.sep + path
+        self.app_path = app.root_path.split('/')[-1]
         self.mapping = {}
-        self._reload_mapping()
+#        self._reload_mapping()
+        self._reload_mapping_by_app(self.app_path)
 
     def _reload_mapping(self):
         if os.path.isfile(self.path):
             self.last_mtime = os.path.getmtime(self.path)
-            with open(self.path) as f:
+            with open(self.path, encoding="utf-8") as f:
                 self.mapping = yaml.safe_load(f.read())
 
-    def get_source(self, environment, template):
+    def get_source(self, environment, template, app):
         if not os.path.isfile(self.path):
             return None, None, None
-        if self.last_mtime != os.path.getmtime(self.path):
-            self._reload_mapping()
+        _ap, _tmp = self.path.split('/')[-2:]
+        if self.last_mtime != os.path.getmtime(self.path) or _ap != app:
+#            self._reload_mapping()
+            self._reload_mapping_by_app(app)
+            print(self.mapping)
+
         if template in self.mapping:
             source = self.mapping[template]
             return source, None, lambda: source == self.mapping.get(template)
         raise TemplateNotFound(template)
+
+    # Y.Kawada
+    def _reload_mapping_by_app(self, app):
+        _p = self.path.split('/')[:-2]
+        self.path = '/'.join(_p) + '/' + app + '/templates.yaml'
+        if os.path.isfile(self.path):
+            self.last_mtime = os.path.getmtime(self.path)
+            with open(self.path, encoding="utf-8") as f:
+                self.mapping = yaml.safe_load(f.read())
